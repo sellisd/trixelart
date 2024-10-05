@@ -3,7 +3,7 @@ import requests
 from PIL import Image
 from io import BytesIO
 from image_processing import pixelate_image_with_right_triangles
-
+import base64
 app = Flask(__name__)
 
 def open_image_from_url(url):
@@ -30,7 +30,8 @@ def pixelate():
         img_io = BytesIO()
         pixelated_img.save(img_io, 'PNG')
         img_io.seek(0)
-        return send_file(img_io, mimetype='image/png')
+        pixelated_img_data = base64.b64encode(img_io.getvalue()).decode('utf-8')
+        return render_template('result.html', pixelated_img_data=pixelated_img_data)
     except Exception as e:
         return str(e), 500
 

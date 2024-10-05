@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixelated Image Result</title>
+    <style>
+        .image-container {
+            display: flex;
+            justify-content: space-around;
+        }
+        .image-container img {
+            max-width: 45%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Pixelated Image</h1>
+    <div class="image-container">
+        <div>
+            <h2>Pixelated Image</h2>
+            <img src="data:image/png;base64,{{ pixelated_img_data }}" alt="Pixelated Image">
+        </div>
+    </div>
+</body>
+</html>
