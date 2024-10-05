@@ -9,14 +9,14 @@
     <h1>Pixelate Image with Right Triangles</h1>
     <form action="/pixelate" method="post">
         <label for="url">Image URL:</label>
-        <input type="text" id="url" name="url" required>
+        <input type="text" id="url" name="url" value="{{ url }}" required>
         <label for="size">Triangle Size:</label>
         <input type="number" id="size" name="size" value="30" required>
         <button type="submit">Pixelate</button>
     </form>
-    {% if image_url %}
+    {% if pixelated_img_data %}
     <h2>Pixelated Image</h2>
-    <img src="{{ image_url }}" alt="Pixelated Image">
+    <img src="data:image/png;base64,{{ pixelated_img_data }}" alt="Pixelated Image">
     {% endif %}
 </body>
 </html>
