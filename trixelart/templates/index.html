@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixelate Image</title>
+</head>
+<body>
+    <h1>Pixelate Image with Right Triangles</h1>
+    <form action="/pixelate" method="post">
+        <label for="url">Image URL:</label>
+        <input type="text" id="url" name="url" required>
+        <label for="size">Triangle Size:</label>
+        <input type="number" id="size" name="size" value="30" required>
+        <button type="submit">Pixelate</button>
+    </form>
+    {% if image_url %}
+    <h2>Pixelated Image</h2>
+    <img src="{{ image_url }}" alt="Pixelated Image">
+    {% endif %}
+</body>
+</html>
